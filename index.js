@@ -32,9 +32,9 @@ function updateStates(){
 
 
 function decreaseStates(){
-        healt = Math.max(0, healt -4);
-        hunger = Math.max(0, hunger +4);
-        happiness = Math.max(0, happiness -4);
+        healt = Math.max(0, healt -1);
+        hunger = Math.max(0, hunger +1);
+        happiness = Math.max(0, happiness -1);
 
     if(healt===0 || hunger===100 || happiness===0) {
         document.body.classList.add('game-over');
@@ -44,7 +44,7 @@ function decreaseStates(){
 }
 
 
-const statDecreaseInterval = setInterval(decreaseStates, 1000);
+const statDecreaseInterval = setInterval(decreaseStates, 3000);
 petElement.addEventListener('click', changeAnimal);
 
 
@@ -56,19 +56,37 @@ petElement.addEventListener('click', changeAnimal);
 
 
 document.querySelector('.Button:nth-child(1)').addEventListener('click', () => {
-    hunger = Math.min(100, hunger - 8);
+    hunger = Math.min(100, hunger - 20);
     updateStats();
 });
 
 
 document.querySelector('.Button:nth-child(2)').addEventListener('click', () => {
-    happiness = Math.min(100, happiness + 8);
+    happiness = Math.min(100, happiness + 20);
     updateStats();
 });
+
+
+
+let sLeepIng = false;
 
 
 document.querySelector('.Button:nth-child(3)').addEventListener('click', () => {
-    healt = Math.min(100, healt + 8);
-    updateStats();
-});
+        if (!sLeepIng){
+        healt = Math.min(100, healt +20);
+        sLeepIng = true;
+        updateStates();
+        document.getElementById('feed').disabled = true;
+        document.getElementById('play').disabled = true;
+        document.getElementById('Message').innerText = "Sommeil réparateur...";
 
+        setTimeout(() => {
+            sLeepIng = false;
+            document.getElementById('feed').disabled = false;
+            document.getElementById('play').disabled = false;
+        }, 5888);
+    }else{
+        document.getElementById('Message').innerText = "Trop dormir empêche d'être productif !";
+    }
+
+});
