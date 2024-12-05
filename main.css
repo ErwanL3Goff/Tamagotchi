@@ -1,7 +1,7 @@
 /* Corps de la page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #141d26;
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,18 @@ body.game-over .game {
 
 /* Conteneur principal du jeu */
 .game {
-    background-color: #fff;
+    background-color: #757575;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     padding: 20px;
     text-align: center;
     position: relative;
+}
+
+
+h1 {
+    color: white;
 }
 
 /* Affichage du Tamagotchi (animal de compagnie) */
@@ -62,7 +67,7 @@ body.game-over .game {
 }
 
 .Button {
-    background-color: #4caf50; /* Vert */
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 15px 20px;
@@ -73,7 +78,7 @@ body.game-over .game {
 }
 
 .Button:hover {
-    background-color: #45a049;
+    background-color: #3b603d;
 }
 
 .Button:active {
