@@ -1,1 +1,1 @@
-# Tamagotchi-Souls
+# Tamagotchi
