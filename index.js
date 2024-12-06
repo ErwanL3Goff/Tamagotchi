@@ -16,6 +16,8 @@ let happiness = 100;
 
 
 
+
+
 function changeAnimal(){
     currentAnimalIndex = (currentAnimalIndex + 1) % animals.length;
     petElement.innerText = animals[currentAnimalIndex];
@@ -61,10 +63,29 @@ document.querySelector('.Button:nth-child(1)').addEventListener('click', () => {
 });
 
 
+
+/*A REVOIR SANS UTILISER ROBOT-BOY*/
+
 document.querySelector('.Button:nth-child(2)').addEventListener('click', () => {
+    const pet = document.getElementById('pet');
+    
     happiness = Math.min(100, happiness + 20);
-    updateStats();
+    updateStates();
+
+    pet.classList.add('playing');
+
+    setTimeout(() => {
+        pet.classList.remove('playing');
+    }, 3000);
 });
+
+
+
+
+
+
+
+
 
 
 

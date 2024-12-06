@@ -24,6 +24,47 @@ body.game-over .game {
     display: none;
 }
 
+.game {
+    position: relative;
+}
+
+/*A REESAYER SANS OPTIMUS PRIME*/
+
+.pet {
+    font-size: 50px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.pet.playing {
+    animation: playAnimation 3s infinite alternate;
+}
+
+@keyframes playAnimation {
+    0% {
+        transform: translateX(0) scale(1) rotate(0deg);
+    }
+    25% {
+        transform: translateX(100px) scale(1.2) rotate(10deg);
+    }
+    50% {
+        transform: translateX(50px) scale(0.9) rotate(-10deg);
+    }
+    75% {
+        transform: translateX(150px) scale(1.1) rotate(5deg);
+    }
+    100% {
+        transform: translateX(100px) scale(1) rotate(0deg);
+    }
+}
+
+
+
+
+
+
+
+
 /* Conteneur principal du jeu */
 .game {
     background-color: #1269ff;
