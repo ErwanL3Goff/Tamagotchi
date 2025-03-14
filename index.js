@@ -46,7 +46,7 @@ function decreaseStates(){
 }
 
 
-const statDecreaseInterval = setInterval(decreaseStates, 1000);
+const statDecreaseInterval = setInterval(decreaseStates, 3000);
 petElement.addEventListener('click', changeAnimal);
 
 
