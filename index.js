@@ -34,9 +34,9 @@ function updateStates(){
 
 
 function decreaseStates(){
-        healt = Math.max(0, healt -1);
-        hunger = Math.max(0, hunger +1);
-        happiness = Math.max(0, happiness -1);
+        healt = Math.max(0, healt -2);
+        hunger = Math.max(0, hunger +2);
+        happiness = Math.max(0, happiness -2);
 
     if(healt===0 || hunger===100 || happiness===0) {
         document.body.classList.add('game-over');
@@ -46,7 +46,7 @@ function decreaseStates(){
 }
 
 
-const statDecreaseInterval = setInterval(decreaseStates, 3000);
+const statDecreaseInterval = setInterval(decreaseStates, 1000);
 petElement.addEventListener('click', changeAnimal);
 
 
@@ -106,8 +106,11 @@ document.querySelector('.Button:nth-child(3)').addEventListener('click', () => {
             document.getElementById('feed').disabled = false;
             document.getElementById('play').disabled = false;
         }, 5888);
+
+        alert("Chachun de nous a un jour fait le même rêve, celui de devenir l'homme le plus fort du monde et c'est le rêve de tous grapplers car le grappler vit pour combattre.");
+
     }else{
-        document.getElementById('Message').innerText = "Trop dormir empêche d'être productif !";
+        alert("Sur ton chemin, tu trouveras toujours des ciseaux capables de découper des pierres. Ne l'oublie pas !");
     }
 
 });
